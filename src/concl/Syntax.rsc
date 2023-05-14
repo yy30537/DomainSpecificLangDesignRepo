@@ -42,7 +42,7 @@ syntax Resolution
   = "resolution:" PixelQuality;
 
 syntax Controller 
-  = "controller" "{" "colour:" Color "}";
+  = "controller" "{" "color:" Color "}";
 
 syntax Game 
   = "game" "{" "name:" GameTitle "}";
