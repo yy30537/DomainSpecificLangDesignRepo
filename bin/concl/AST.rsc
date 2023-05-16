@@ -1,13 +1,5 @@
 module concl::AST
 
-/*
- * Define the Abstract Syntax for ConCL
- *
- * - make sure there is an almost one-to-one correspondence with the grammar in Syntax.rsc
- */
-
-
-
 data Pack = pack(str id, list[Element] elements);
 
 data Element =
@@ -27,15 +19,16 @@ data Color =
   | gold() 
   | silver() 
   | green();
-  
+
 data GameName = 
     noGame() 
   | hedgehogHedwig() 
-  | resolutionLink();
+  | linksResolution();
 
 data DisplayType = LiquidCrystal() | OrganicLED();
 
-data PixelDensity = HighDef() | FullHighDef() | QuadHighDef() | FiveKHighDef();
+data PixelDensity = HighDef() | FullHighDef() | QuadHighDef() | UltraHighDef();
+
 
  
  
