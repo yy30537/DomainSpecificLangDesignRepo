@@ -10,6 +10,15 @@ module concl::AST
 
 data Pack = pack(str id, list[Element] elements);
 
+data Color = 
+    black() 
+  | white() 
+  | red() 
+  | blue() 
+  | gold() 
+  | silver() 
+  | green();
+
 data Element =
     gameConsole(StorageCapacity storage, Screen display)
   | controlDevice(Color color)
@@ -19,14 +28,7 @@ data StorageCapacity = storageCapacity(int capacity);
 
 data Screen = screen(int diagonal, DisplayType displayType, PixelDensity pixelDensity);
 
-data Color = 
-    black() 
-  | white() 
-  | red() 
-  | blue() 
-  | gold() 
-  | silver() 
-  | green();
+
   
 data GameName = 
     noGame() 
