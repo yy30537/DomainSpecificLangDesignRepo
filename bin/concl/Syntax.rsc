@@ -2,17 +2,17 @@ module concl::Syntax
 
 layout Whitespace = [\ \t\n\r]*;
 
-lexical Identifier = [a-z][a-zA-Z0-9]* !>> [a-zA-Z0-9]; // Identifiers
+lexical Identifier = [a-z][a-zA-Z0-9]* !>> [a-zA-Z0-9];
 
-lexical Color = "black" | "white" | "red" | "blue" | "gold" | "silver" | "green"; // Colors
+lexical Color = "black" | "white" | "red" | "blue" | "gold" | "silver" | "green";
 
-lexical GameTitle = "Hedwig the Hedgehog" | "Link’s Resolution"; // Game titles
+lexical GameTitle = "None" | "Hedwig the Hedgehog" | "Link’s Resolution";
 
-lexical DisplayKind = "LED" | "OLED"; // Display types
+lexical DisplayKind = "LED" | "OLED";
 
-lexical PixelQuality = "HD" | "Full-HD" | "4K" | "5K"; // Pixel qualities
+lexical PixelQuality = "HD" | "Full-HD" | "4K" | "Ultra-HD";
 
-lexical StorageCapacity = [0-9]+ !>> [0-9]; // Storage capacities
+lexical StorageCapacity = [0-9]+ !>> [0-9];
 
 syntax ConsolePack = "console_pack" Identifier "{" ComponentList "}";
 
