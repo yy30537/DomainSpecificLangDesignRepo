@@ -18,10 +18,12 @@ import ParseTree;
  // If this is not the case, further error handling would be needed. 
  // Also, it assumes that the parse tree t is always well-formed. 
  // If there's a chance it might not be, you might want to add additional error handling.
+
+
+public Pack cst2ast(Tree t) {
+    switch (t) {
+        default:
+            throw "Unknown tree node: <t>";
+    }
+}
  
- public Pack cst2ast(Tree t) {
- 	switch(t.top) {
- 		
- 		default: fail;
- 	}
- }
