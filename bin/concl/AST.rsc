@@ -7,8 +7,23 @@ module concl::AST
  */
 
 
+// A Game Console Pack is defined by an identifier and a list of components
+data Pack = pack(str id, list[Component] components);
 
-data Pack = pack(str id, list[Element] elements);
+// A Component can be a Console, Controller or a Game
+data Component =
+    Console(StorageCapacity storage, Display display) // console component has storage and a display
+  | Controller(Color color) // controller has a colour: black, white, red, blue, gold, silver, or green
+  | Game(GameName game); 
+
+// storage’s size is defined by an integer value that ranges from 32 until 1024 GB.
+data StorageCapacity = storageCapacity(int capacity);
+
+// display component is defined by:
+// - diagonal size (inches), 
+// - type (LED or OLED) 
+// - number of pixels (HD, Full-HD, 4K, 5K).
+data Display = display(int diagonal, DisplayType displayType, PixelQuality pixelQuality);
 
 data Color = 
     black() 
@@ -19,73 +34,15 @@ data Color =
   | silver() 
   | green();
 
-data Element =
-    gameConsole(StorageCapacity storage, Screen display)
-  | controlDevice(Color color)
-  | includedGame(GameName game);
-
-data StorageCapacity = storageCapacity(int capacity);
-
-data Screen = screen(int diagonal, DisplayType displayType, PixelDensity pixelDensity);
-
-
-  
+// game included with the console pack: 
+// - no game 
+// - Hedwig the Hedgehog
+// - Link’s Resolution
 data GameName = 
-    noGame() 
-  | hedgehogHedwig() 
-  | resolutionLink();
+    None() 
+  | HedwigTheHedgehog() 
+  | LinksResolution();
 
-data DisplayType = LiquidCrystal() | OrganicLED();
+data DisplayType = LED() | OLED();
 
-data PixelDensity = HighDef() | FullHighDef() | QuadHighDef() | FiveKHighDef();
-
- 
- 
- /* 
- layout Whitespace = [\ \t\n\r]*;
-
-lexical Identifier = [a-z][a-zA-Z0-9]* !>> [a-zA-Z0-9]; // Identifiers
-
-lexical Color = "black" | "white" | "red" | "blue" | "gold" | "silver" | "green"; // Colors
-
-lexical GameTitle = "Hedwig the Hedgehog" | "Link’s Resolution"; // Game titles
-
-lexical DisplayKind = "LED" | "OLED"; // Display types
-
-lexical PixelQuality = "HD" | "Full-HD" | "4K" | "5K"; // Pixel qualities
-
-lexical StorageCapacity = [0-9]+ !>> [0-9]; // Storage capacities
-
-syntax ConsolePack = "console_pack" Identifier "{" ComponentList "}";
-
-syntax ComponentList = Component*;
-
-syntax Component 
-  = Console 
-  | Controller 
-  | Game;
-
-syntax Console 
-  = "console" "{" Storage "," Display "}";
-
-syntax Storage
-  = "storage:" StorageCapacity "GB";
-
-syntax Display 
-  = "display" "{" Diagonal "," Type "," Resolution "}";
-
-syntax Diagonal
-  = "diagonal:" StorageCapacity "inch";
-
-syntax Type
-  = "type:" DisplayKind;
-
-syntax Resolution
-  = "resolution:" PixelQuality;
-
-syntax Controller 
-  = "controller" "{" "colour:" Color "}";
-
-syntax Game 
-  = "game" "{" "name:" GameTitle "}";
- */
+data PixelQuality = HighDef() | FullHighDef() | QuadHighDef() | FiveKHighDef();

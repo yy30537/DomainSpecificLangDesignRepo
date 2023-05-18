@@ -10,7 +10,8 @@ import concl::AST;
  */
 
  /*
- * Create a function called checkHardwareConfiguration(...), which is responsible for calling all the required functions that check the program's well-formedness as described in the PDF (Section 3.2.) 
+ * Create a function called checkHardwareConfiguration(...), which is responsible for calling 
+ * all the required functions that check the program's well-formedness as described in the PDF (Section 3.2.) 
  * This function takes as a parameter the program's AST and returns true if the program is well-formed or false otherwise.
  */
  
