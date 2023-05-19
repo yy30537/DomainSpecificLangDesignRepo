@@ -9,7 +9,7 @@ lexical DisplayType = "LED" | "OLED";
 lexical PixelQuality = "HighDef" | "FullHighDef" | "QuadHighDef" | "FiveKHighDef";
 lexical StorageCapacity = [0-9]+ !>> [0-9];
 
-syntax ConsolePack = "console_pack" Identifier "{" Component* "}";
+syntax ConsolePack = "console_pack" Identifier "{" Component+ "}";
 syntax Component = Console | Controller | Game;
 syntax Console = "console" "{" "storage:" StorageCapacity "GB" "," Display "}";
 syntax Display = "display" "{" "diagonal:" StorageCapacity "inch" "," "type:" DisplayType "," "resolution:" PixelQuality "}";
