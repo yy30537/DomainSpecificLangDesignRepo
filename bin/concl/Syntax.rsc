@@ -4,7 +4,8 @@ layout Whitespace = [\ \t\n\r]*;
 
 // lexical
 
-lexical Identifier = [a-z][a-zA-Z0-9]* !>> [a-zA-Z0-9];
+lexical Identifier = [a-z_][a-zA-Z0-9_]* !>> [a-zA-Z0-9_];
+
 
 lexical Color = "black" | "white" | "red" | "blue" | "gold" | "silver" | "green";
 
@@ -18,7 +19,7 @@ lexical Number = [0-9]+ !>> [0-9];
 
 // syntax
 
-syntax ConsolePack = "console_pack" Identifier "{" Component {"," Component}* "}";
+start syntax ConsolePack = "console_pack" Identifier "{" Component+ "}"; 
 
 syntax Component = Console | Controller | Game;
 
