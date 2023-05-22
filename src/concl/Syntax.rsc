@@ -18,7 +18,7 @@ lexical Number = [0-9]+ !>> [0-9];
 
 // syntax
 
-syntax ConsolePack = "console_pack" Identifier "{" Component+ "}";
+syntax ConsolePack = "console_pack" Identifier "{" {Component ","}* "}";
 
 syntax Component = Console | Controller | Game;
 
