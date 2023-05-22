@@ -27,7 +27,7 @@ data Display = display(int diagonal, Type displayType, Resolution resolution);
 data Colour = black() | white() | red() | blue() | gold() | silver() | green();
 
 // game included with the console pack: 
-// - none
+// - None
 // - Hedwig the Hedgehog
 // - Links Resolution
 data Name = None() | HedwigtheHedgehog() | LinksResolution();
