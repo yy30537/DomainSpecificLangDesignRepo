@@ -7,13 +7,13 @@ layout Whitespace = [\ \t\n\r]*;
 lexical Identifier = [a-z_][a-zA-Z0-9_]* !>> [a-zA-Z0-9_];
 
 
-lexical Color = "black" | "white" | "red" | "blue" | "gold" | "silver" | "green";
+lexical Colour = "black" | "white" | "red" | "blue" | "gold" | "silver" | "green";
 
-lexical GameName = "None" | "HedwigTheHedgehog" | "LinksResolution";
+lexical Name = "None" | "Hedwig the Hedgehog" | "Links Resolution";
 
-lexical DisplayType = "LED" | "OLED";
+lexical Type = "LED" | "OLED";
 
-lexical PixelQuality = "HighDef" | "FullHighDef" | "QuadHighDef" | "FiveKHighDef";
+lexical Resolution = "HD" | "Full-HD" | "4K" | "5K";
 
 lexical Number = [0-9]+ !>> [0-9];
 
@@ -25,8 +25,8 @@ syntax Component = Console | Controller | Game;
 
 syntax Console = "console" "{" "storage:" Number "GB" "," Display "}";
 
-syntax Controller = "controller" "{" "color:" Color "}";
+syntax Controller = "controller" "{" "color:" Colour "}";
 
-syntax Game = "game" "{" "name:" GameName "}";
+syntax Game = "game" "{" "name:" Name "}";
 
-syntax Display = "display" "{" "diagonal:" Number "inches" "," "type:" DisplayType "," "resolution:" PixelQuality "}";
+syntax Display = "display" "{" "diagonal:" Number "inches" "," "type:" Type "," "resolution:" Resolution "}";

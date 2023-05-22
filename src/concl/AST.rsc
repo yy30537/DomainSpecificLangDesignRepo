@@ -12,8 +12,8 @@ data ConsolePack = pack(str id, list[Component] components);
 // A Component can be a Console, Controller or a Game
 data Component =
     Console(StorageCapacity storage, Display display) // console component has storage and a display
-  | Controller(Color color) // controller has a colour: black, white, red, blue, gold, silver, or green
-  | Game(GameName game); 
+  | Controller(Colour colour) // controller has a colour: black, white, red, blue, gold, silver, or green
+  | Game(Name name); 
 
 // storage’s size is defined by an integer value that ranges from 32 until 1024 GB.
 data StorageCapacity = storageCapacity(int capacity);
@@ -22,16 +22,16 @@ data StorageCapacity = storageCapacity(int capacity);
 // - diagonal size (inches), 
 // - type (LED or OLED) 
 // - number of pixels (HD, Full-HD, 4K, 5K).
-data Display = display(int diagonalInInches, DisplayType displayType, PixelQuality pixelQuality);
+data Display = display(int diagonal, Type displayType, Resolution resolution);
 
-data Color = black() | white() | red() | blue() | gold() | silver() | green();
+data Colour = black() | white() | red() | blue() | gold() | silver() | green();
 
 // game included with the console pack: 
 // - no game 
 // - Hedwig the Hedgehog
 // - Link’s Resolution
-data GameName = None() | HedwigTheHedgehog() | LinksResolution();
+data Name = None() | HedwigtheHedgehog() | LinksResolution();
 
-data DisplayType = LED() | OLED();
+data Type = LED() | OLED();
 
-data PixelQuality = HighDef() | FullHighDef() | QuadHighDef() | FiveKHighDef();
+data Resolution = HD() | FullHD() | FourK() | FiveK();
