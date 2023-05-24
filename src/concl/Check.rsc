@@ -48,27 +48,7 @@ public bool checkHardwareConfiguration(Console_Pack cp) {
 		// 7. As for game included with the console pack: either no game is included, or a game called
 		// Hedwig the Hedgehog, or a game called Link’s Resolution.
 		
-		
-		//if (Exp1) 
-		//  is_wf = false; 
-		
-		//if (Exp2) 
-		//  is_wf = false; 
-		
-		//if (Exp3) 
-		//  is_wf = false; 
-		
-		//if (Exp4) 
-		//  is_wf = false; 
-		
-		//if (Exp5) 
-		//  is_wf = false; 
-		
-		//if (Exp6) 
-		//  is_wf = false; 
-		
-		//if (Exp7) 
-		//  is_wf = false; 
+
 		
     return is_wf;
 }
