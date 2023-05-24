@@ -10,10 +10,10 @@ module concl::AST
 data Console_Pack = console_pack(str id, list[Component] components);
 
 // A Component can be a Console, Controller or a Game
-data Component =
-    Console(Storage storage, Display display) // console component has storage and a display
-  | Controller(Colour colour) // controller has a colour: black, white, red, blue, gold, silver, or green
-  | Game(Name name); 
+data Component 
+	= Console(Storage storage, Display display) // console component has storage and a display
+	| Controller(Colour colour) // controller has a colour: black, white, red, blue, gold, silver, or green
+	| Game(Name name); 
 
 // storage’s size is defined by an integer value that ranges from 32 until 1024 GB.
 data Storage = storage(int capacity);
