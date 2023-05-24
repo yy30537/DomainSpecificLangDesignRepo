@@ -13,7 +13,8 @@ import IO;
 */
  
 public Console_Pack cst2ast(Tree pt) {
-	println("<pt>");  // print the parse tree
+	println(" parse tree: \n"); 
+	println("<pt>");  
 	list[Component] emptylist = [];
 	return console_pack("testid", emptylist);
 }

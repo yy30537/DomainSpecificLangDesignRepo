@@ -29,4 +29,4 @@ syntax Controller = "controller" "{" "color:" Colour "}";
 
 syntax Game = "game" "{" "name:" Name "}";
 
-syntax Display = "display" "{" "diagonal:" Number "inches" "," "type:" Type "," "resolution:" Resolution "}";
+syntax Display = "display" "{" "diagonal:" Number "inch" "," "type:" Type "," "resolution:" Resolution "}";
