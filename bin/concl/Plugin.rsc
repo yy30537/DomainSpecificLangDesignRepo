@@ -5,6 +5,7 @@ import util::IDE;
 import concl::Check;
 import concl::Parser;
 import concl::CST2AST;
+import IO;
 
 /*
 * This function is defined to test the functionality of the whole assignment. 
@@ -29,7 +30,13 @@ bool checkWellformedness(loc fil) {
 * If there are syntactic errors in the program, no highlighting will be shown in the editor.
 */
 void main() {
+
+	println("START OF MAIN\n");
+
 	registerLanguage("ConCL - DSLD", "concl", Tree(str _, loc path) {
-		return parserConCL(path);
-  	});
+        return parserConCL(path);
+    });
+    
+    bool result = checkWellformedness(|project://ConCL/src/concl/test.concl|);
+    println("Well-formedness check result: <result>");
 }

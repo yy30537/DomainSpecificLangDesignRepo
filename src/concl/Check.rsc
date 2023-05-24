@@ -81,6 +81,7 @@ public bool checkHardwareConfiguration(Console_Pack cp) {
     // Print out list[Game]
     println("Games: ");
     println(games);
+    
 	return is_wf;
  
 }

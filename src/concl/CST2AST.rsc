@@ -3,7 +3,7 @@ module concl::CST2AST
 import ParseTree;
 import concl::AST;
 import concl::Syntax;
-
+import IO;
 
 /*
  * Implement a mapping from concrete syntax trees (CSTs) to abstract syntax trees (ASTs)
@@ -12,11 +12,8 @@ import concl::Syntax;
  * Map lexical nodes to Rascal primitive types (bool, int, str)
 */
  
- 
-
 public Console_Pack cst2ast(Tree pt) {
-    switch(pt) {
-        default:
-            fail;
-    }
+	println("<pt>");  // print the parse tree
+	list[Component] emptylist = [];
+	return console_pack("testid", emptylist);
 }
