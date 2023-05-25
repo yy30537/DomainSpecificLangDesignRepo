@@ -14,6 +14,8 @@ import IO;
 // takes the start symbol of the grammar and a string to parse, and returns a parse tree
 // #start[...] specify the start symbol 
 public Tree parserConCL(loc source) {
+	println("-START parserConCL");
 	pt = parse(#start[Console_Pack], readFile(source));
+	//println("<pt>");
     return pt;
 }

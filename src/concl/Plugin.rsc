@@ -16,9 +16,16 @@ import IO;
 */
 bool checkWellformedness(loc fil) {
 	// Parsing
+	
+	println("---START CWF---");
+	
 	&T resource = parserConCL(fil);
+	//println("<resource>");
+	
 	// Transform the parse tree into an abstract syntax tree
 	&T ast = cst2ast(resource);
+	//println("<ast>");
+	
 	// Check the well-formedness of the program
 	return checkHardwareConfiguration(ast);
 }
@@ -31,12 +38,15 @@ bool checkWellformedness(loc fil) {
 */
 void main() {
 
-	println("START OF MAIN\n");
+	println("---START OF MAIN---");
 
 	registerLanguage("ConCL - DSLD", "concl", Tree(str _, loc path) {
         return parserConCL(path);
     });
     
+
     bool result = checkWellformedness(|project://ConCL/src/concl/test.concl|);
+    
+
     println("Well-formedness check result: <result>");
 }

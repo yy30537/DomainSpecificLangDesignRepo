@@ -20,6 +20,7 @@ import IO;
 * Define a function per each verification defined in the PDF (Section 3.2.)
 */
 
+
 	// 1. Every console pack must have at least one controller and at most four controllers included.
 	
 	// 2. It is not allowed to have multiple controllers of the same color included in a game pack
@@ -38,9 +39,13 @@ import IO;
 	
 	// 7. As for game included with the console pack: either no game is included, or a game called
 	// Hedwig the Hedgehog, or a game called Link’s Resolution.
+
+
 		
 
 public bool checkHardwareConfiguration(Console_Pack cp) {
+    
+    println("---START checkHardwareConfiguration---");
     
     bool is_wf = true;
     

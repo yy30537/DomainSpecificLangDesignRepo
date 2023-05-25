@@ -15,5 +15,5 @@ console_pack my_console_pack {
 	},
 	game {
 		name: Hedwig the Hedgehog
-	},
+	}
 }
