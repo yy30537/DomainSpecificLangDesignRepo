@@ -19,11 +19,11 @@ bool checkWellformedness(loc fil) {
 	
 	println("---START CWF---");
 	
-	&T resource = parserConCL(fil);
-	//println("<resource>");
+	Tree resource = parserConCL(fil);
+	println("<resource>");
 	
 	// Transform the parse tree into an abstract syntax tree
-	&T ast = cst2ast(resource);
+	Console_Pack ast = cst2ast(resource);
 	//println("<ast>");
 	
 	// Check the well-formedness of the program
