@@ -17,7 +17,7 @@ public Console_Pack cst2ast(Tree t) {
     switch (t) {
 		// TODO
         default:
-            throw "Unexpected tree structure";
+            throw "Unexpected tree structure, expect Console_Pack";
     }
 }
 
@@ -25,7 +25,7 @@ public Component component2ast(Tree t) {
     switch (t) {
 		// TODO
         default:
-            throw "Unexpected tree structure";
+            throw "Unexpected tree structure, expect Component";
     }
 }
 
@@ -33,7 +33,7 @@ public Storage storage2ast(Tree t) {
     switch (t) {
 		// TODO
     	default:
-        	throw "Unexpected tree structure";
+        	throw "Unexpected tree structure, expect Storage";
     }
 }
 
@@ -41,7 +41,7 @@ public Display display2ast(Tree t) {
 	switch (t) {
 		// TODO
     	default:
-        	throw "Unexpected tree structure";
+        	throw "Unexpected tree structure, expect Display";
     }
 }
 
@@ -52,7 +52,7 @@ public Type type2ast(Tree t) {
         case (Type) `OLED`:
             return OLED();
         default:
-            throw "Unexpected tree structure";
+            throw "Unexpected tree structure, expect Type";
     }
 }
 
@@ -67,7 +67,7 @@ public Resolution resolution2ast(Tree t) {
         case (Resolution) `5K`:
             return FiveK();
         default:
-            throw "Unexpected tree structure";
+            throw "Unexpected tree structure, expect Resolution";
     }
 }
 
@@ -88,7 +88,7 @@ public Colour colour2ast(Tree t) {
         case (Colour) `green`:
             return green();
         default:
-            throw "Unexpected tree structure";
+            throw "Unexpected tree structure, expect Colour";
     }
 }
 
@@ -101,6 +101,6 @@ public Name name2ast(Tree t) {
         case (Name) `Links Resolution`:
             return LinksResolution();
         default:
-            throw "Unexpected tree structure";
+            throw "Unexpected tree structure, expect Name";
     }
 }
