@@ -12,6 +12,9 @@ import IO;
  * Map lexical nodes to Rascal primitive types (bool, int, str)
 */
  
+ 
+ 
+
 
 public Console_Pack cst2ast(Tree t) {
     switch (t) {
@@ -37,13 +40,18 @@ public Storage storage2ast(Tree t) {
     }
 }
 
+
 public Display display2ast(Tree t) {
-	switch (t) {
-		// TODO
-    	default:
-        	throw "Unexpected tree structure, expect Display";
+    switch (t) {
+        case (Display) `display { diagonal: <Number diagonal> inch, type: <Type displayType>, resolution: <Resolution resolution> }`:
+            // todo: convert diagonal to int?
+            return display(123456, type2ast(displayType), resolution2ast(resolution));
+        default:
+            throw "Unexpected tree structure in display2ast: <t>";
     }
 }
+
+
 
 public Type type2ast(Tree t) {
     switch (t) {
