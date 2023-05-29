@@ -26,7 +26,10 @@ bool checkWellformedness(loc fil) {
 * If there are syntactic errors in the program, no highlighting will be shown in the editor.
 */
 void main() {
-	registerLanguage("ConCL - DSLD", "concl", Tree(str _, loc path) {
-		return parserConCL(path);
-  	});
+	//registerLanguage("ConCL - DSLD", "concl", Tree(str _, loc path) {
+	//	return parserConCL(path);
+  	//});
+  	&T resource = parserConCL(|file:///C:/Users/filip/Downloads/test.txt|);
+	// Transform the parse tree into an abstract syntax tree
+	&T ast = cst2ast(resource);
 }

@@ -16,22 +16,26 @@ import IO;
  
  
  
- 
 public AConsole_Pack cst2ast(start[Console_Pack] scp) {
 	Console_Pack cp = scp.top;
-	list[AComponent] listAComp = [component2ast(c) | <Component c>   <- cp.comps];
-	complete = listAComp + component2ast(cp.comp);
-	AConsole_Pack result= console_pack("<cp.id>", complete);
+	AConsole_Pack result = console_pack("<cp.id>", toList(cp.comps, cp.comp));
 	return result;
 }
 
-//list[AComponent] toList(\(Component)+ comps, Component lastComp) {
-//    list[AComponent] listAComp = [component2ast(c) | (Component c, _) <- comps];
-//    return listAComp + component2ast(lastComp);
-//	return [] + component2ast(lastComp);
-//}
+list[AComponent] toList(CompAndComma+ comps, Component lastComp) {
+    list[AComponent] listAComp = [compAndComma2ast(c) | CompAndComma c <- comps];
+    return listAComp + component2ast(lastComp);
+}
 
 
+public AComponent compAndComma2ast(CompAndComma c) {
+	switch (c) {
+        case (CompAndComma) `<Component comp> , `:
+            return component2ast(comp);
+        default:
+            throw "Unexpected tree structure in compAndComma: <c>";
+    }
+}
 
 public AComponent component2ast(Component c) {
     switch (c) {
