@@ -3,9 +3,7 @@ module concl::CST2AST
 import concl::AST;
 import concl::Syntax;
 
-import ParseTree;
 import String;
-import IO;
 
 /*
  * Implement a mapping from concrete syntax trees (CSTs) to abstract syntax trees (ASTs)
