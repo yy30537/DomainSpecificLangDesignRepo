@@ -22,7 +22,7 @@ data AComponent
 // - diagonal size (inches), 
 // - type (LED or OLED) 
 // - resolution (HD, Full-HD, 4K, 5K).
-data ADisplay = display(int diagonal, AType displayType, AResolution resolution);
+data ADisplay = display(real diagonal, AType displayType, AResolution resolution);
 
 data AColour = black() | white() | red() | blue() | gold() | silver() | green();
 

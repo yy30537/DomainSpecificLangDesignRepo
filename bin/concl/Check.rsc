@@ -27,7 +27,6 @@ public bool checkHardwareConfiguration(AConsole_Pack cp) {
 	result = result && checkHedwigtheHedgehog(cp.components);
 	result = result && checkSameConsoleConfig(cp.components);
 	result = result && checkNrGames(cp.components);
-//	result = result && (cp.components);
 	return result;
 }
 
@@ -92,3 +91,4 @@ public bool checkNrGames(list[AComponent] comps){
 		return false;
 	return true;
 }
+

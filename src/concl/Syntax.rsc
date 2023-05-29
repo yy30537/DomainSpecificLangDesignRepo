@@ -16,9 +16,10 @@ lexical Resolution = "HD" | "Full-HD" | "4K" | "5K";
 
 lexical Number = [0-9]+ !>> [0-9];
 
+lexical Real = [0-9]*"."[0-9]+ | [0-9]+;
+
 lexical Storage = [1][0][2][0-4] > [1-9][0-9][0-9] >  [4-9][0-9] > [3][2-9];
 
-// syntax
 
 start syntax Console_Pack = "console_pack" Identifier id "{" CompAndComma+ comps Component comp "}";
 
@@ -32,4 +33,4 @@ syntax Controller = "controller" "{" "colour:" Colour col "}";
 
 syntax Game = "game" "{" "name:" Name n "}";
 
-syntax Display = "display" "{" "diagonal:" Number nr "inch" "," "type:" Type t "," "resolution:" Resolution r "}";
+syntax Display = "display" "{" "diagonal:" Real nr "inch" "," "type:" Type t "," "resolution:" Resolution r "}";

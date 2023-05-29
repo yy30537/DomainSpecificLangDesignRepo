@@ -56,8 +56,8 @@ public AComponent component2ast(Component c) {
 
 public ADisplay display2ast(Display d) {
     switch (d) {
-        case (Display) `display { diagonal: <Number nr> inch , type: <Type t> , resolution: <Resolution r> }`:
-            return display(toInt("<nr>"), type2ast(t), resolution2ast(r));
+        case (Display) `display { diagonal: <Real nr> inch , type: <Type t> , resolution: <Resolution r> }`:
+            return display(toReal("<nr>"), type2ast(t), resolution2ast(r));
         default:
             throw "Unexpected tree structure in display2ast: <d>";
     }
