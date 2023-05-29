@@ -30,7 +30,7 @@ list[AComponent] toList(CompAndComma+ comps, Component lastComp) {
 
 public AComponent compAndComma2ast(CompAndComma c) {
 	switch (c) {
-        case (CompAndComma) `<Component comp> , `:
+        case (CompAndComma) `(<Component comp> , )`:
             return component2ast(comp);
         default:
             throw "Unexpected tree structure in compAndComma: <c>";
