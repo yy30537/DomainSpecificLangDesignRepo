@@ -16,24 +16,15 @@ import String;
  
 public AConsole_Pack cst2ast(start[Console_Pack] scp) {
 	Console_Pack cp = scp.top;
-	AConsole_Pack result = console_pack("<cp.id>", toList(cp.comps, cp.comp));
+	list[AComponent] listAComp = [component2ast(c) | /Component c <- cp.comps];
+	AConsole_Pack result = console_pack("<cp.id>", listAComp + component2ast(cp.comp));
 	return result;
 }
 
-list[AComponent] toList(CompAndComma+ comps, Component lastComp) {
-    list[AComponent] listAComp = [compAndComma2ast(c) | CompAndComma c <- comps];
-    return listAComp + component2ast(lastComp);
-}
 
 
-public AComponent compAndComma2ast(CompAndComma c) {
-	switch (c) {
-        case (CompAndComma) `<Component comp> ,`:
-            return component2ast(comp);
-        default:
-            throw "Unexpected tree structure in compAndComma: <c>";
-    }
-}
+
+
 
 public AComponent component2ast(Component c) {
     switch (c) {

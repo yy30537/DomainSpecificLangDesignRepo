@@ -19,9 +19,9 @@ lexical Real = [0-9]*"."[0-9]+ | [0-9]+;
 lexical Storage = [1][0][2][0-4] > [1-9][0-9][0-9] >  [4-9][0-9] > [3][2-9];
 
 
-start syntax Console_Pack = "console_pack" Identifier id "{" CompAndComma+ comps Component comp "}";
+start syntax Console_Pack = "console_pack" Identifier id "{" (Component ",")+ comps Component comp "}";
 
-syntax CompAndComma = Component comp ",";
+//syntax CompAndComma = Component comp ",";
 
 syntax Component = Console | Controller | Game;
 
