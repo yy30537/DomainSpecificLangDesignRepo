@@ -49,10 +49,6 @@ public AComponent component2ast(Component c) {
 }
 
 
-//public AStorage storage2ast(str st) {
-//    return storage(toInt(st));
-//}
-
 
 public ADisplay display2ast(Display d) {
     switch (d) {
