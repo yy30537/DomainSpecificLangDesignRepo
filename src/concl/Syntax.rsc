@@ -14,8 +14,6 @@ lexical Type = "LED" | "OLED";
 
 lexical Resolution = "HD" | "Full-HD" | "4K" | "5K";
 
-lexical Number = [0-9]+ !>> [0-9];
-
 lexical Real = [0-9]*"."[0-9]+ | [0-9]+;
 
 lexical Storage = [1][0][2][0-4] > [1-9][0-9][0-9] >  [4-9][0-9] > [3][2-9];
