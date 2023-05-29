@@ -15,8 +15,6 @@ data AComponent
 	| controller(AColour colour) // controller has a colour: black, white, red, blue, gold, silver, or green
 	| game(AName name); 
 
-// storage’s size is defined by an integer value that ranges from 32 until 1024 GB.
-//data AStorage = storage(int capacity);
 
 // display component is defined by:
 // - diagonal size (inches), 
